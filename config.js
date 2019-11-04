@@ -1,11 +1,13 @@
+/* eslint-disable quotes */
+
 'use strict';
 
 module.exports = {
   url: 'https://lumen.netlify.com',
   pathPrefix: '/',
-  title: 'Blog by John Doe',
-  subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
-  copyright: '© All rights reserved.',
+  title: "Julian's Blog",
+  subtitle: "I'm a  Bristol based web developer",
+  copyright: '',
   disqusShortname: '',
   postsPerPage: 4,
   googleAnalyticsId: 'UA-73379983-2',
@@ -25,9 +27,9 @@ module.exports = {
     }
   ],
   author: {
-    name: 'John Doe',
-    photo: '/photo.jpg',
-    bio: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+    name: 'Julian Inwood',
+    photo: '/me.png',
+    bio: 'Bristol based web developer',
     contacts: {
       email: '',
       facebook: '#',
