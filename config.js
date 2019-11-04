@@ -3,7 +3,7 @@
 'use strict';
 
 module.exports = {
-  url: 'https://lumen.netlify.com',
+  url: 'https://jinwood.github.io',
   pathPrefix: '/',
   title: "Julian's Blog",
   subtitle: "I'm a  Bristol based web developer",
