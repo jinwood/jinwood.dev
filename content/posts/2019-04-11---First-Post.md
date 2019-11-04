@@ -2,7 +2,7 @@
 title: Starting your own dotfiles repository
 date: '2016-09-01T23:46:37.121Z'
 template: 'post'
-draft: false
+draft: true
 slug: '/posts/starting-dotfiles'
 category: 'toolkit'
 tags:
