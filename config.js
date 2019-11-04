@@ -31,7 +31,7 @@ module.exports = {
     photo: '/me.png',
     bio: 'Bristol based web developer',
     contacts: {
-      email: '',
+      email: 'jinwood@protonmail.com',
       facebook: '#',
       telegram: '#',
       twitter: '#',
