@@ -4,7 +4,7 @@
 
 module.exports = {
   url: 'https://jinwood.github.io',
-  pathPrefix: '/',
+  pathPrefix: '/public',
   title: "Julian's Blog",
   subtitle: "I'm a  Bristol based web developer",
   copyright: '',
