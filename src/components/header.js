@@ -9,7 +9,7 @@ const Header = ({ title }) => {
       </h1>
       <Link
         class="about-link"
-        style="text-decoration: none; margin-top: 10px;"
+        style={{ textDecoration: "none", marginTop: "10px" }}
         to="/about"
       >
         About
