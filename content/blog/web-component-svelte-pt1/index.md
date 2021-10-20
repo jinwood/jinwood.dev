@@ -24,7 +24,7 @@ Mockup
 
 I'm not a designer, and I'd imagine the final thing is going to look different. But good to get started with at least an idea.
 
-To follow along you'll need familiarty with JavaScript, Svelte.js, and the Spotify API. I'll be using VS Code, but you can use whichever editor you prefer.
+To follow along you'll need familiarty with JavaScript, Svelte.js, and the Spotify API. I'll be using VS Code, but you can use whichever editor you prefer. We will be using [SvelteKit](https://kit.svelte.dev/docs), a tool kit for Svelte projects.
 
 Lets get started. Run the following commands from your terminal:
 
@@ -41,3 +41,5 @@ This will do a few things.
 - scafold a sveltkit project in a new directory `spotify-top-artists`
 - install dependencies
 - run the development server at http://localhost:3000
+
+In part two we'll begin to build out our codebase.
