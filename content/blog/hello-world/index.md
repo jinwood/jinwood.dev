@@ -1,7 +1,7 @@
 ---
 title: Hello World
 date: "2015-05-01T22:12:03.284Z"
-description: "Hello World"
+description: "Obligatory Hello World"
 ---
 
 > Obligatory hello world. I'm leaving this one up for reference ;)

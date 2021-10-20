@@ -1,10 +1,10 @@
 ---
-title: Building a web component with Svelete (pt1)
+title: Building a web component with Svelte (pt1)
 date: "2021-08-20T22:12:03.284Z"
-description: "Building a Spotify top artists web component using svelete.js"
+description: "Building a Spotify top artists web component using Svelte"
 ---
 
-I'm going to build a "Spotify Top Artists" web component using Svelte.js, and document the process here.
+I'm going to build a "Spotify Top Artists" web component using Svelte, and document the process here.
 
 Svelte is a framework for building web applications out of many individual components. It is a declarative, component-based approach to building UI. However, you can also use it to output a single custom element, aka web component, which could then be used anywhere (framework agnostic).
 
