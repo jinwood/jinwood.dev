@@ -8,7 +8,7 @@ const Header = ({ title }) => {
         <Link to="/">{title}</Link>
       </h1>
       <Link
-        class="about-link"
+        className="about-link"
         style={{ textDecoration: "none", marginTop: "10px" }}
         to="/about"
       >
