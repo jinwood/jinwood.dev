@@ -36,6 +36,8 @@ npm run dev -- --open
 
 ```
 
+When prompted, select `skeleton project`, `typescript`, `es-lint` and `prettier` (the last 3 are personal preference).
+
 This will do a few things.
 
 - scafold a sveltkit project in a new directory `spotify-top-artists`
