@@ -1,4 +1,58 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[jinwood.github.io]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 20 Oct 2021 20:34:53 GMT</lastBuildDate><item><title><![CDATA[Building a web component with Svelte (pt1)]]></title><description><![CDATA[I’m going to build a “Spotify Top Artists” web component using Svelte, and document the process here. Svelte is a framework for building web…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/web-component-svelte-pt1/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/web-component-svelte-pt1/</guid><pubDate>Fri, 20 Aug 2021 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;I’m going to build a “Spotify Top Artists” web component using Svelte, and document the process here.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[jinwood.github.io]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 23 Nov 2021 17:37:49 GMT</lastBuildDate><item><title><![CDATA[Building a web component with Svelte (pt2)]]></title><description><![CDATA[Now that we have our basic project scaffolded out, we can make a start. First, we need to tidy up the initial files the svelte script gave…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/web-component-svelte-pt2/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/web-component-svelte-pt2/</guid><pubDate>Tue, 09 Nov 2021 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;Now that we have our basic project scaffolded out, we can make a start.&lt;/p&gt;
+&lt;p&gt;First, we need to tidy up the initial files the svelte script gave us:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Remove &lt;code class=&quot;language-text&quot;&gt;routes&lt;/code&gt; directory&lt;/li&gt;
+&lt;li&gt;Remove &lt;code class=&quot;language-text&quot;&gt;app.html&lt;/code&gt; from &lt;code class=&quot;language-text&quot;&gt;./src&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create &lt;code class=&quot;language-text&quot;&gt;App.svelte&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;main.ts&lt;/code&gt; in &lt;code class=&quot;language-text&quot;&gt;./src&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create a &lt;code class=&quot;language-text&quot;&gt;public&lt;/code&gt; directory and add an &lt;code class=&quot;language-text&quot;&gt;index.html&lt;/code&gt; file&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We now have the filestructure needed to create a very simple custom element! Next we need to tell the Svelete compiler to output a custom element rather than a svelet app.&lt;/p&gt;
+&lt;p&gt;To do this, open &lt;code class=&quot;language-text&quot;&gt;svelte.config.js&lt;/code&gt; modify the &lt;code class=&quot;language-text&quot;&gt;config&lt;/code&gt; object, adding a new &lt;code class=&quot;language-text&quot;&gt;compilerOptions&lt;/code&gt; property:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;  const config = {
+      // stuff
+        compilerOptions: {
+            customElements: true,
+        },
+      // more stuff
+  }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Remove whatever is in the &lt;code class=&quot;language-text&quot;&gt;kit&lt;/code&gt; property and fill with:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;kit: {
+    files: {
+        template:
+    }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now, we can add a basic component and render it in &lt;code class=&quot;language-text&quot;&gt;index.html&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In &lt;code class=&quot;language-text&quot;&gt;App.svelte&lt;/code&gt;, add the following code:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;!-- The &quot;tag&quot; property here is what we use render our element in HTML --&gt;
+&amp;lt;svelte:options tag=&quot;my-component&quot; /&gt;
+
+&amp;lt;script lang=&quot;ts&quot;&gt;
+	let count: number = 0;
+	const increment = () =&gt; {
+		count += 1;
+	};
+&amp;lt;/script&gt;
+
+&amp;lt;button on:click={increment}&gt;
+	Clicks: {count}
+&amp;lt;/button&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We will be rendering a simple button &amp;#x26; counter to prove that our component will render.&lt;/p&gt;
+&lt;p&gt;Add this code to &lt;code class=&quot;language-text&quot;&gt;./src/main.ts&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;export { default as App } from &apos;./App.svelte&apos;;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Next, add the following to &lt;code class=&quot;language-text&quot;&gt;./public/index.html&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;!DOCTYPE html&gt;
+&amp;lt;html lang=&quot;en&quot;&gt;
+  &amp;lt;head&gt;
+    &amp;lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &amp;lt;link rel=&quot;icon&quot; href=&quot;/favicon.ico&quot; /&gt;
+    &amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &amp;lt;title&gt;Spotify Top Artists&amp;lt;/title&gt;
+  &amp;lt;/head&gt;
+  &amp;lt;body&gt;
+    &amp;lt;my-component&gt;&amp;lt;/my-component&gt;
+    &amp;lt;script type=&quot;module&quot; src=&quot;/src/main.ts&quot;&gt;&amp;lt;/script&gt;
+  &amp;lt;/body&gt;
+&amp;lt;/html&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Building a web component with Svelte (pt1)]]></title><description><![CDATA[I’m going to build a “Spotify Top Artists” web component using Svelte, and document the process here. Svelte is a framework for building web…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/web-component-svelte-pt1/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/web-component-svelte-pt1/</guid><pubDate>Fri, 20 Aug 2021 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;I’m going to build a “Spotify Top Artists” web component using Svelte, and document the process here.&lt;/p&gt;
 &lt;p&gt;Svelte is a framework for building web applications out of many individual components. It is a declarative, component-based approach to building UI. However, you can also use it to output a single custom element, aka web component, which could then be used anywhere (framework agnostic).&lt;/p&gt;
 &lt;p&gt;Motivations:&lt;/p&gt;
 &lt;ul&gt;
@@ -49,6 +103,7 @@ cd spotify-top-artists
 npm install
 npm run dev -- --open
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;When prompted, select &lt;code class=&quot;language-text&quot;&gt;skeleton project&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;typescript&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;es-lint&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;prettier&lt;/code&gt; (the last 3 are personal preference).&lt;/p&gt;
 &lt;p&gt;This will do a few things.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;scafold a sveltkit project in a new directory &lt;code class=&quot;language-text&quot;&gt;spotify-top-artists&lt;/code&gt;&lt;/li&gt;
