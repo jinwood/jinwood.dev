@@ -1,9 +1,9 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
 
 const Header = ({ title }) => {
   return (
-    <div className="heading-container">
+    <div className="heading-container title">
       <h1 className="main-heading">
         <Link to="/">{title}</Link>
       </h1>
@@ -15,7 +15,7 @@ const Header = ({ title }) => {
         About
       </Link>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

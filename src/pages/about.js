@@ -1,13 +1,17 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/layout";
 
 const About = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title
+  const siteTitle = data.site.siteMetadata?.title;
   return (
     <Layout location={location} title={siteTitle}>
       <div>
-        <h1>About</h1>
+        <h1 className="title">About</h1>
+        <h1 className="cv-header">Julian Inwood - JavaScript (UK)</h1>
+        <p className="cv-header">
+          E: <a href="mailto:jinw@pm.me">jinw@pm.me</a>
+        </p>
       </div>
       <div className="about-container">
         <div className="about-intro">
@@ -30,7 +34,7 @@ const About = ({ data, location }) => {
           </p>
           <p>
             Currently I am working with react, redux and Angular 9 during the
-            day, and Svelete at home. I'm experienced with C# .NET and spent the
+            day, and Svelte at home. I'm experienced with C# .NET and spent the
             first few years of my software career building web apps using this
             technology. Although currently my preference is with the JavaScript
             / node ecosystem, I am interested in any and all web technologies.
@@ -51,9 +55,9 @@ const About = ({ data, location }) => {
               href="https://www.quadrotech-it.com/office-365-management-software/"
               target="blank"
             >
-              Nova
+              Nova{" "}
             </a>
-            and
+            and{" "}
             <a href="https://www.quest.com/on-demand/" target="blank">
               On Demand
             </a>
@@ -139,6 +143,7 @@ const About = ({ data, location }) => {
               technology - Azure Functions, Web Apps, Service Fabric, Storage
               Queues.
             </li>
+            <br />
             <li>
               Extend a legacy telnet service by implementing a proxy Web App,
               used by Waitrose distribution centers.
@@ -221,7 +226,7 @@ const About = ({ data, location }) => {
         <div className="job-entry">
           <h4>Hobbies and Interests (pre covid)</h4>
           <p>
-            I train Brazilian Jiu-Jitsu at Sweatbox Bristol under Pedro Bessa.
+            I train Brazilian Jiu-Jitsu at Ippon Bournemouth under Jeff Lawson.
           </p>
           <p>
             I am fanatical about Formula 1 and try to attend one race a year. So
@@ -232,17 +237,14 @@ const About = ({ data, location }) => {
             I practice meditation when I can and try to be mindful in everything
             I do.
           </p>
-          <p>
-            I love video games, and despite spending a decent portion of my life
-            playing them, I'm still terrible :)
-          </p>
+          <p>I love video games and am currently enjoying Inscryption. </p>
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default About
+export default About;
 
 export const pageQuery = graphql`
   query {
@@ -252,4 +254,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
