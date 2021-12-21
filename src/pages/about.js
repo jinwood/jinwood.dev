@@ -24,13 +24,7 @@ const About = ({ data, location }) => {
           </p>
           <p>
             I enjoy using both Mac and Linux, my workflow consists of both
-            command line tools (vim, grep, fsf) and VS Code. If you're
-            interested you can see my dotfiles{" "}
-            <a href="https://github.com/jinwood/dotfiles" target="blank">
-              {" "}
-              here
-            </a>
-            .
+            command line tools (vim, grep, fsf) and VS Code.
           </p>
           <p>
             Currently I am working with react, redux and Angular 9 during the
@@ -43,7 +37,7 @@ const About = ({ data, location }) => {
 
         <h3>Employment</h3>
         <div className="job-entry">
-          <h4>Current</h4>
+          <h4>06-2019 - present</h4>
           <strong>Quadrotech / Quest</strong>
           <p>
             I work for{" "}
@@ -62,16 +56,17 @@ const About = ({ data, location }) => {
               On Demand
             </a>
             . Both are Office 365 management and reporting platforms for the
-            enterprise. I'm part of the UI team working with React, Redux and
+            enterprise. I'm part of the UI team working with React, TypeScript, Redux and
             Angular.
           </p>
           <ul>
             <li>Building new features, testing, presenting to stakeholders</li>
             <li>Fixing bugs</li>
             <li>Writing unit / integration tests (using cypress)</li>
+            <li>Migrating from flow.js to TypeScript</li>
             <li>Assist in designing new features</li>
             <li>
-              Liase with other teams to provide insight in what functionality UI
+              Liaise with other teams to provide insight in what functionality UI
               might require from services etc
             </li>
             <li>Shadow / mentor junior team members</li>
@@ -82,6 +77,7 @@ const About = ({ data, location }) => {
 
         <h3>Previous</h3>
         <div className="job-entry">
+          <h4>08/2018 - 06/2019</h4>
           <strong>Just Eat</strong>
           <p>
             Part of the web foundations team, running the Just Eat global
@@ -126,8 +122,8 @@ const About = ({ data, location }) => {
           <p>
             I joined REPL to help build their workplace social platform,
             Gloodoo. A .NET application built on a bespoke HTTP library (home
-            grown .NET!). I also assisted with desgining and building a task
-            management app using servless Azure architecture.
+            grown .NET!). I also assisted with designing and building a task
+            management app using serverless Azure architecture.
           </p>
           <ul>
             <li>
@@ -201,7 +197,7 @@ const About = ({ data, location }) => {
               Maintenance of bespoke logging application for Mind charity, a
               Python flask application.
             </li>
-            <li>Build email templates for marketing.</li>
+            <li style={{ marginTop: '40px' }}>Build email templates for marketing.</li>
             <li>Provide general web support for various customers.</li>
           </ul>
         </div>
@@ -240,7 +236,7 @@ const About = ({ data, location }) => {
           <p>I love video games and am currently enjoying Inscryption. </p>
         </div>
       </div>
-    </Layout>
+    </Layout >
   );
 };
 
