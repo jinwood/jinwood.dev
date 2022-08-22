@@ -1,1 +1,11 @@
-https://nextjs.org/learn/basics/assets-metadata-css/styling-tips
+# fresh project
+
+### Usage
+
+Start the project:
+
+```
+deno task start
+```
+
+This will watch the project directory and restart as necessary.
