@@ -15,14 +15,14 @@ export async function readAllMD(source: string, target: string) {
 }
 
 async function saveMarkdownFile(content: string, name: string, target: string) {
-  let fileNameParts = name.split(".");
+  const fileNameParts = name.split(".");
   fileNameParts.pop();
 
   const fileUrl = "/blog/" + fileNameParts.join(".");
   const search = Search.getInstance();
   search.indexElement(content, fileUrl);
 
-  fileNameParts.push();
+  fileNameParts.push("tsx");
 
   const destination = target + "/" + fileNameParts.join(".");
 

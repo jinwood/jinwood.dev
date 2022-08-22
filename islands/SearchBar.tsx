@@ -15,7 +15,9 @@ export default function SearchBar() {
             q: inputField.current.value,
           })
       );
-      setResults(await res.json());
+      const json = await res.json();
+      console.log("json", json);
+      setResults(json);
     }
   }
 
