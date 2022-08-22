@@ -1,6 +1,7 @@
 import { walk } from "https://deno.land/std@0.152.0/fs/mod.ts";
 import { Marked } from "https://deno.land/x/markdown@v2.0.0/mod.ts";
 import { encode } from "https://deno.land/std@0.152.0/encoding/hex.ts";
+import { Search } from "./search.ts";
 
 export async function readAllMD(source: string, target: string) {
   for await (const file of walk(source)) {
@@ -16,6 +17,11 @@ export async function readAllMD(source: string, target: string) {
 async function saveMarkdownFile(content: string, name: string, target: string) {
   let fileNameParts = name.split(".");
   fileNameParts.pop();
+
+  const fileUrl = "/blog/" + fileNameParts.join(".");
+  const search = Search.getInstance();
+  search.indexElement(content, fileUrl);
+
   fileNameParts.push();
 
   const destination = target + "/" + fileNameParts.join(".");
