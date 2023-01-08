@@ -27,24 +27,37 @@ export default function About(props: PageProps) {
           node ecosystem, I am interested in any and all web technologies.
         </p>
       </div>
-      <h3>Employment</h3>
+      <div class="mt-8">
+        <h3 class="text-gray-900 text-3xl">Employment</h3>
+      </div>
+
+      <div class="mt-8">
+        <h4 class="font-bold">Current</h4>
+      </div>
       <div class={jobEntryClass}>
-        <h4>Current</h4>
+        <h4 class="font-bold">Cuckoo Internet</h4>
+      </div>
+
+      <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+
+      <h3 class="font-bold">Previous</h3>
+      <div class={jobEntryClass}>
         <strong>Quadrotech / Quest</strong>
         <p>
-          I work for{" "}
-          <a href="https://www.quest.com/" target="blank">
-            Quest{" "}
-          </a>
-          , building{" "}
+          Building{" "}
           <a
+            class="text-blue-500"
             href="https://www.quadrotech-it.com/office-365-management-software/"
             target="blank"
           >
             Nova{" "}
           </a>
           and{" "}
-          <a href="https://www.quest.com/on-demand/" target="blank">
+          <a
+            class="text-blue-500"
+            href="https://www.quest.com/on-demand/"
+            target="blank"
+          >
             On Demand
           </a>
           . Both are Office 365 management and reporting platforms for the
@@ -64,9 +77,6 @@ export default function About(props: PageProps) {
         </ul>
       </div>
 
-      <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
-
-      <h3 class="font-bold">Previous</h3>
       <div class={jobEntryClass}>
         <strong>Just Eat</strong>
         {/* Dates here */}
