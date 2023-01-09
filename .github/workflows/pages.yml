@@ -32,7 +32,7 @@ jobs:
       - uses: denoland/setup-deno@v1
         with:
           deno-version: v1.x
-      - run: deno bundle src/main.ts build/main.js
+      - run: deno bundle main.ts build/main.js
       - uses: actions/configure-pages@v1
       - uses: actions/upload-pages-artifact@v1
         with:
