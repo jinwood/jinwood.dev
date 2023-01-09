@@ -3,7 +3,6 @@ import { extract } from "$std/encoding/front_matter.ts";
 import { PageProps } from "$fresh/server.ts";
 import { PostCard } from "../components/post-card/index.tsx";
 import { Post } from "../types.ts";
-import { About } from "../components/about/index.tsx";
 import { Layout } from "../components/layout/index.tsx";
 
 export const handler: Handlers = {
