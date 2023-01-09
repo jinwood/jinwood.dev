@@ -4,6 +4,7 @@ import { PageProps } from "$fresh/server.ts";
 import { PostCard } from "../components/post-card/index.tsx";
 import { Post } from "../types.ts";
 import { About } from "../components/about/index.tsx";
+import { Layout } from "../components/layout/index.tsx";
 
 export const handler: Handlers = {
   async GET(_req, ctx) {
@@ -39,18 +40,19 @@ async function getPost(slug: string): Promise<Post | null> {
 }
 
 export default function BlogIndexPage(props: PageProps<Post[]>) {
+  const { url } = props;
+  const { pathname } = url;
+  console.log("href: ", pathname);
   const posts = props.data;
   return (
-    <main class="max-w-screen-md px-4 pt-16 mx-auto">
-      <h1 class="text-5xl font-bold">Julian Inwood</h1>
-      <div class="mt-8">
-        <About />
-      </div>
-      <div class="mt-8">
-        {posts.map((post) => (
-          <PostCard post={post} />
-        ))}
-      </div>
-    </main>
+    <Layout pathname={pathname}>
+      <main class="max-w-screen-md px-4 pt-16 mx-auto">
+        <div class="mt-8">
+          {posts.map((post) => (
+            <PostCard post={post} />
+          ))}
+        </div>
+      </main>
+    </Layout>
   );
 }
