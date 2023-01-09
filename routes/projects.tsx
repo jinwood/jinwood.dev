@@ -6,7 +6,7 @@ export default function Projects(props: PageProps) {
   const { pathname } = url;
   console.log(props);
   return (
-    <Layout pathname={pathname}>
+    <Layout pathname={pathname} title="Projects">
       <main class="max-w-screen-md px-4 pt-16 mx-auto">
         <h1>Projects (coming soon)</h1>
       </main>
