@@ -11,6 +11,7 @@ export function Layout(props: {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Julian Inwood's personal website" />
         <title>Julian Inwood{title ? ` - ${title}` : ""}</title>
       </head>
       <Header {...props} />
