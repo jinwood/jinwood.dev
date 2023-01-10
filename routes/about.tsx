@@ -1,4 +1,5 @@
 import { PageProps } from "$fresh/server.ts";
+import Hero from "../components/hero/index.tsx";
 import { Layout } from "../components/layout/index.tsx";
 
 export default function About(props: PageProps) {
@@ -8,14 +9,13 @@ export default function About(props: PageProps) {
   return (
     <Layout pathname={pathname} title="About">
       <main class="max-w-screen-md px-4 pt-16 mx-auto">
+        <Hero />
         <div class="mt-8">
           <p>
-            I'm an experienced web developer and have worked across a variety of
-            stacks, in various industries. I started my career in the Microsoft
-            ecosystem with ASP.NET but have since transitioned to a more
-            JavaScript orientated path. With that said, I am interested in any
-            and all tech stacks but with a focus on JavaScript. Hi, I'm Julian
-            Inwood. I'm a software engineer and a writer. I'm currently
+            My started my career in the Microsoft ecosystem with ASP.NET but
+            have since transitioned to a more JavaScript orientated path. With
+            that said, I am interested in any and all tech stacks but with a
+            focus on JavaScript.{" "}
           </p>
           <p class="mt-4">
             I enjoy using both Mac and Linux, my workflow consists of both
