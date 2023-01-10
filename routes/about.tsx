@@ -5,45 +5,77 @@ import { Layout } from "../components/layout/index.tsx";
 export default function About(props: PageProps) {
   const { url } = props;
   const { pathname } = url;
-  const jobEntryClass = "mt-8";
+  const jobEntryClass = "mt-4";
   return (
     <Layout pathname={pathname} title="About">
       <main class="max-w-screen-md px-4 pt-16 mx-auto">
         <Hero />
         <div class="mt-8">
           <p>
-            My started my career in the Microsoft ecosystem with ASP.NET but
-            have since transitioned to a more JavaScript orientated path. With
-            that said, I am interested in any and all tech stacks but with a
-            focus on JavaScript.{" "}
+            The past 8 years have taken me across a variety of stacks and
+            technologies, culminating in a love of JavaScript and the node
+            ecosystem. With that said, I am interested in any and all tech
+            stacks but with a focus on JavaScript.
           </p>
+
           <p class="mt-4">
-            I enjoy using both Mac and Linux, my workflow consists of both
-            command line tools (vim, grep, fsf) and VS Code. If you're
-            interested you can see my dotfiles here.
-          </p>
-          <p class="mt-4">
-            Currently I am working with react, redux and Angular 9 during the
-            day, and Svelte at home. I'm experienced with C# .NET and spent the
+            Currently I am working with react, redux and AWS during the day, and
+            Deno / Fresh at home. I'm experienced with C# .NET and spent the
             first few years of my software career building web apps using this
-            technology. Although currently my preference is with the JavaScript
-            / node ecosystem, I am interested in any and all web technologies.
+            technology. I also have a strong grasp of Vue, Angular and vanilla
+            JS.
           </p>
         </div>
         <div class="mt-8">
           <h3 class="text-gray-900 text-3xl">Employment</h3>
         </div>
 
-        <div class="mt-8">
-          <h4 class="font-bold">Current</h4>
+        <div class="mt-6">
+          <h2 class="font-bold text-2xl">Current</h2>
         </div>
         <div class={jobEntryClass}>
           <h4 class="font-bold">Cuckoo Internet</h4>
+          <h5 class="text-gray-600">Full Stack Developer</h5>
+
+          <p class="mt-4">
+            I'm currently employed by Cuckoo, building the UKs most loved ISP.
+            I'm on the platform team, working on our <em>shiny new</em> AWS
+            powered serverless backend.
+          </p>
+
+          <p>My day to day activities include....</p>
+          <ul class="list-disc list-inside ml-4 space-y-2 mt-2">
+            <li>
+              {" "}
+              Building new features for both our customer facing website, and
+              our internal CMS
+            </li>
+            <li>
+              Creating UI components based off our design system, {""}
+              <a
+                href="https://design.cuckoo.co/"
+                target="blank"
+                class="text-blue-800 hover:underline"
+              >
+                yolk
+              </a>
+              .
+            </li>
+            <li>
+              Work with our product team to understand customer pain points and
+              design solutions to improve accessibility, usability and site
+              performance.
+            </li>
+            <li>
+              Collaborating via product reviews, code reviews and architecture
+              discussions
+            </li>
+          </ul>
         </div>
 
         <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
 
-        <h3 class="font-bold">Previous</h3>
+        <h2 class="font-bold text-2xl">Previous</h2>
         <div class={jobEntryClass}>
           <strong>Quadrotech / Quest</strong>
           <p>

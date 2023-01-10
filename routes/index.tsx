@@ -20,6 +20,14 @@ export default function BlogIndexPage(props: PageProps<Post[]>) {
   return (
     <Layout pathname={pathname} title="Home">
       <main class="max-w-screen-md px-4 pt-16 mx-auto">
+        <picture class="w-full">
+          <source srcset="/images/home.webp" type="image/webp" />
+          <img
+            src="/images/desk.jpg"
+            alt="Desk"
+            class="w-full h-96 object-cover rounded-xl"
+          />
+        </picture>
         <div class="mt-8">
           {posts?.map((post) => (
             <PostCard post={post} />
