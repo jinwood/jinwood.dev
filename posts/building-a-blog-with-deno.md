@@ -4,9 +4,9 @@ snippet: This is the first post
 publishedAt: 2021-01-08
 ---
 
-[Deno](https://deno.land) Deno is a brand new JavaScript and TypeScript runtime
-that has been making waves in the development community. It's built on the same
-V8 JavaScript engine that powers Google Chrome and is designed to be a modern,
+[Deno](https://deno.land) is a brand new JavaScript and TypeScript runtime that
+has been making waves in the development community. It's built on the same V8
+JavaScript engine that powers Google Chrome and is designed to be a modern,
 secure, and performant alternative to Node.js. But, what makes Deno stand out is
 that it doesn't use package managers like npm and yarn, but instead, it lets you
 import modules directly from a URL. I've been interested in trying it out since
