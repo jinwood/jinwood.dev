@@ -1,3 +1,4 @@
+import Footer from "./footer.tsx";
 import Header from "./header.tsx";
 
 export function Layout(props: {
@@ -16,6 +17,7 @@ export function Layout(props: {
       </head>
       <Header {...props} />
       <body>{props.children}</body>
+      <Footer />
     </html>
   );
 }
