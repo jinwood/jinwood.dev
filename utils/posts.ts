@@ -12,8 +12,11 @@ export async function getPosts(): Promise<Post[]> {
     promises.push(getPost(slug));
   }
 
-  const posts = (await Promise.all(promises)) as Post[];
-  posts.sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime());
+  const posts = (await Promise.all(promises)).filter(
+    (post) =>
+      post?.publishedAt instanceof Date && !isNaN(post.publishedAt.getTime())
+  ) as Post[];
+  posts.sort((a, b) => a.publishedAt.getTime() - b.publishedAt.getTime());
   return posts;
 }
 
@@ -24,6 +27,7 @@ export async function getPost(slug: string): Promise<Post | null> {
   return {
     slug,
     title: attrs.title,
+    draft: attrs.draft,
     publishedAt: new Date(attrs.publishedAt),
     content: body,
     snippet: attrs.snippet,
