@@ -8,7 +8,6 @@ export async function getPosts(): Promise<Post[]> {
 
   for await (const file of files) {
     const slug = file.name.replace(".md", "");
-    console.log(slug);
     promises.push(getPost(slug));
   }
 
@@ -16,7 +15,7 @@ export async function getPosts(): Promise<Post[]> {
     (post) =>
       post?.publishedAt instanceof Date && !isNaN(post.publishedAt.getTime())
   ) as Post[];
-  posts.sort((a, b) => a.publishedAt.getTime() - b.publishedAt.getTime());
+  posts.sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime());
   return posts;
 }
 

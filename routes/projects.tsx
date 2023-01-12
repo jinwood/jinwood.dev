@@ -4,7 +4,6 @@ import { Layout } from "../components/layout/index.tsx";
 export default function Projects(props: PageProps) {
   const { url } = props;
   const { pathname } = url;
-  console.log(props);
   return (
     <Layout pathname={pathname} title="Projects">
       <main class="max-w-screen-md px-4 pt-16 mx-auto">
