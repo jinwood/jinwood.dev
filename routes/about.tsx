@@ -12,7 +12,7 @@ export default function About(props: PageProps) {
         <Hero />
         <div class="mt-8">
           <p>
-            The past 8 years have taken me across a variety of stacks and
+            The past 10 years have taken me across a variety of stacks and
             technologies, culminating in a love of JavaScript and the node
             ecosystem. With that said, I am interested in any and all tech
             stacks but with a focus on JavaScript.
