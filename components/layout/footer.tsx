@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <section class="bg-gray-100">
+    <section class="bg-gray-100 fixed inset-x-0 bottom-0">
       <div class="max-w-screen-xl px-4 mx-auto space-y-2 overflow-hidden sm:px-6 lg:px-8">
         <nav class="flex flex-wrap flex-row justify-center -mx-5 -my-2">
           <a

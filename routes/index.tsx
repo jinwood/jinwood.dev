@@ -1,5 +1,4 @@
 import { Handlers } from "$fresh/server.ts";
-import { extract } from "$std/encoding/front_matter.ts";
 import { PageProps } from "$fresh/server.ts";
 import { PostCard } from "../components/post-card/index.tsx";
 import { Post } from "../types.ts";
