@@ -5,4 +5,5 @@ export interface Post {
   draft: boolean;
   content: string;
   snippet: string;
+  tags: string[];
 }

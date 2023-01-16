@@ -4,6 +4,7 @@ import { PostCard } from "../components/post-card/index.tsx";
 import { Post } from "../types.ts";
 import { Layout } from "../components/layout/index.tsx";
 import { getPosts } from "../utils/posts.ts";
+import { useState } from "preact/hooks";
 
 export const handler: Handlers<Post[]> = {
   async GET(_req, ctx) {
@@ -13,9 +14,20 @@ export const handler: Handlers<Post[]> = {
 };
 
 export default function BlogIndexPage(props: PageProps<Post[]>) {
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const setSelectedTag = (tag: string) => {
+    console.log("tag", tag);
+    if (selectedTags.includes(tag)) {
+      setSelectedTags(selectedTags.filter((t) => t !== tag));
+    } else {
+      setSelectedTags([...selectedTags, tag]);
+    }
+  };
+
   const { url } = props;
   const { pathname } = url;
   const posts = props.data;
+
   return (
     <Layout pathname={pathname} title="Home">
       <main class="max-w-screen-md px-4 pt-16 mx-auto">
@@ -29,7 +41,7 @@ export default function BlogIndexPage(props: PageProps<Post[]>) {
         </picture>
         <div class="mt-8">
           {posts?.map((post) => (
-            <PostCard post={post} />
+            <PostCard post={post} setSelectedTag={setSelectedTag} />
           ))}
         </div>
       </main>

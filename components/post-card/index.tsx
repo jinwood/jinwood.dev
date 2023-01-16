@@ -1,21 +1,29 @@
+import Tags from "../../islands/tags.tsx";
 import { Post } from "../../types.ts";
 
-export function PostCard(props: { post: Post }) {
-  const { post } = props;
+export function PostCard(props: {
+  post: Post;
+  setSelectedTag: (tag: string) => void;
+}) {
+  const { post, setSelectedTag } = props;
+  const { title, publishedAt, snippet, tags, slug } = post;
 
   return (
     <div class="py-8 border(t gray-200)">
-      <a class="sm:col-span-2" href={`/${post.slug}`}>
-        <h3 class="text(3xl gray-900) font-bold">{post.title}</h3>
-        <time class="text-gray-500">
-          {new Date(post.publishedAt).toLocaleDateString("en-us", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
-        </time>
-        <div class="mt-4 text-gray-900">{post.snippet}</div>
+      <a class="sm:col-span-2" href={`/${slug}`}>
+        <h3 class="text(3xl gray-900) font-bold">{title}</h3>
       </a>
+      <div class="">
+        <Tags tags={tags} setSelectedTag={setSelectedTag} />
+      </div>
+      <time class="text-gray-500">
+        {new Date(publishedAt).toLocaleDateString("en-us", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })}
+      </time>
+      <div class="mt-4 text-gray-900">{snippet}</div>
     </div>
   );
 }
