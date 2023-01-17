@@ -5,6 +5,7 @@ import { Post } from "../types.ts";
 import { Layout } from "../components/layout/index.tsx";
 import { getPosts } from "../utils/posts.ts";
 import { useState } from "preact/hooks";
+import Posts from "../islands/posts.tsx";
 
 export const handler: Handlers<Post[]> = {
   async GET(_req, ctx) {
@@ -40,9 +41,7 @@ export default function BlogIndexPage(props: PageProps<Post[]>) {
           />
         </picture>
         <div class="mt-8">
-          {posts?.map((post) => (
-            <PostCard post={post} setSelectedTag={setSelectedTag} />
-          ))}
+          <Posts posts={posts} />
         </div>
       </main>
     </Layout>
