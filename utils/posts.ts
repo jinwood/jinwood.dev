@@ -2,13 +2,12 @@ import { extract } from "https://deno.land/std@0.171.0/encoding/front_matter.ts"
 import { join } from "$std/path/mod.ts";
 import { Post } from "../types.ts";
 
-export async function getPosts(tag?: string): Promise<Post[]> {
+export async function getPosts(tags?: string[]): Promise<Post[]> {
   const files = await Deno.readDir("./posts");
   const promises = [];
 
   for await (const file of files) {
     const slug = file.name.replace(".md", "");
-    console.log(slug);
     promises.push(getPost(slug));
   }
 
@@ -19,8 +18,8 @@ export async function getPosts(tag?: string): Promise<Post[]> {
 
   posts.sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime());
 
-  if (tag) {
-    return posts.filter((post) => post.tags.includes(tag));
+  if (tags) {
+    return posts.filter((post) => tags.every((tag) => post.tags.includes(tag)));
   }
 
   return posts;

@@ -1,6 +1,7 @@
 ---
 title: Deno Blog - Adding Tags
 snippet: Tags are a great way to organize your blog posts. In this post, we'll add tags to our blog.
+tags: [deno, blog, typescript]
 publishedAt: 2023-01-16
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Building a blog with Deno
 snippet: Deno is a new JavaScript runtime that is gaining popularity among developers due to its speed, security, and simplicity. In this blog post, I will show you how to build a simple blog site using Deno and Fresh, a popular web framework for Deno.
-tags: [deno, blog, TypeScript]
+tags: [deno, blog, typescript]
 publishedAt: 2023-01-12
 ---
 
