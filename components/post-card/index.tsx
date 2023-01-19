@@ -1,11 +1,8 @@
 import { Post } from "../../types.ts";
 import Tags from "../../islands/tags.tsx";
 
-export function PostCard(props: {
-  post: Post;
-  setSelectedTag: (tag: string) => void;
-}) {
-  const { post, setSelectedTag } = props;
+export function PostCard(props: { post: Post }) {
+  const { post } = props;
   const { title, publishedAt, snippet, tags, slug } = post;
 
   return (
@@ -14,7 +11,7 @@ export function PostCard(props: {
         <h3 class="text(3xl gray-900) font-bold">{title}</h3>
       </a>
       <div class="">
-        <Tags tags={tags} setSelectedTag={setSelectedTag} />
+        <Tags tags={tags} />
       </div>
       <time class="text-gray-500">
         {new Date(publishedAt).toLocaleDateString("en-us", {

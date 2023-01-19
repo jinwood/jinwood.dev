@@ -1,6 +1,6 @@
-import { Handlers, PageProps } from "https://deno.land/x/fresh@1.1.2/server.ts";
-import { CSS, render } from "$gfm";
+import { Handlers, PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
+import { CSS, render } from "$gfm";
 import { Layout } from "../components/layout/index.tsx";
 import { getPost } from "../utils/posts.ts";
 

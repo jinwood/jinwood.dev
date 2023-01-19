@@ -82,7 +82,7 @@ export default function Posts(props: { posts: Post[] }) {
                       {tag}
                     </button>
                   ))}
-                </div>{" "}
+                </div>
               </div>
               <time class="text-gray-500">
                 {new Date(publishedAt).toLocaleDateString("en-us", {

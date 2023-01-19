@@ -1,12 +1,9 @@
 import { Handlers } from "$fresh/server.ts";
 import { PageProps } from "$fresh/server.ts";
-import { PostCard } from "../components/post-card/index.tsx";
 import { Post } from "../types.ts";
 import { Layout } from "../components/layout/index.tsx";
 import { getPosts } from "../utils/posts.ts";
-import { useState } from "preact/hooks";
-import Posts from "../islands/posts.tsx";
-import Bug from "../islands/bug.tsx";
+import Posts from "../components/posts/index.tsx";
 
 export const handler: Handlers<Post[]> = {
   async GET(_req, ctx) {
@@ -16,16 +13,6 @@ export const handler: Handlers<Post[]> = {
 };
 
 export default function BlogIndexPage(props: PageProps<Post[]>) {
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const setSelectedTag = (tag: string) => {
-    console.log("tag", tag);
-    if (selectedTags.includes(tag)) {
-      setSelectedTags(selectedTags.filter((t) => t !== tag));
-    } else {
-      setSelectedTags([...selectedTags, tag]);
-    }
-  };
-
   const { url } = props;
   const { pathname } = url;
   const posts = props.data;
@@ -42,8 +29,7 @@ export default function BlogIndexPage(props: PageProps<Post[]>) {
           />
         </picture>
         <div class="mt-8">
-          <Bug posts={posts} />
-          {/* <Posts posts={posts} /> */}
+          <Posts posts={posts} />
         </div>
       </main>
     </Layout>
