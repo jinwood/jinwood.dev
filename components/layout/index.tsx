@@ -16,7 +16,7 @@ export function Layout(props: {
         <title>Julian Inwood{title ? ` - ${title}` : ""}</title>
       </head>
       <Header {...props} />
-      <body>{props.children}</body>
+      <body class="pb-20">{props.children}</body>
       <Footer />
     </html>
   );

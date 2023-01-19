@@ -7,9 +7,7 @@ import { getPosts } from "../../utils/posts.ts";
 export const handler: Handlers = {
   async GET(_req, ctx) {
     const { slug } = ctx.params;
-    console.log(slug);
     const posts = await getPosts([slug]);
-    console.log(posts);
     return ctx.render(posts);
   },
 };

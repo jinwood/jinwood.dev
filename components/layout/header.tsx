@@ -1,9 +1,9 @@
 export default function Header(props: { pathname: string }) {
-  const { pathname } = props;
-  const links = ["about", "projects"];
+  const links = ["about", "projects", "blog"];
   const activeStyles = (route: string) => {
+    const pathname = props.pathname.split("/")[1];
     if (!pathname) return "";
-    return pathname.substring(1).trim() === route ? "bg-gray-100" : "";
+    return pathname === route ? "bg-gray-100" : "";
   };
 
   return (

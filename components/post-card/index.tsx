@@ -1,5 +1,5 @@
 import { Post } from "../../types.ts";
-import Tags from "../../islands/tags.tsx";
+import Tags from "../tags/index.tsx";
 
 export function PostCard(props: { post: Post }) {
   const { post } = props;
