@@ -29,7 +29,7 @@ export default function BlogIndexPage(props: PageProps<Post[]>) {
           />
         </picture>
         <div class="mt-8">
-          <Posts posts={posts} />
+          <Posts posts={posts} pathname={pathname} />
         </div>
       </main>
     </Layout>

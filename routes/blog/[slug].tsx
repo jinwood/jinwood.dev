@@ -20,8 +20,14 @@ export default function Blog(props: PageProps<Post[]>) {
   return (
     <Layout pathname={pathname} title={pathname}>
       <main class="max-w-screen-md px-4 pt-16 mx-auto">
+        <a
+          href="/blog"
+          class="inline-block px-2 py-1 mr-2 text-sm font-medium text-gray-800 bg-gray-100 rounded-b-none hover:bg-blue-200 cursor-pointer"
+        >
+          clear
+        </a>
         {posts?.map((post) => (
-          <PostCard post={post} />
+          <PostCard post={post} pathname={pathname} />
         ))}
       </main>
     </Layout>
