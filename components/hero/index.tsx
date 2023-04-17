@@ -3,6 +3,7 @@ import { asset } from "$fresh/runtime.ts";
 export default function Hero() {
   const image = asset("/images/desk.webp");
   const style = `background-image:linear-gradient(rgba(0, 0, 40, 0.3),rgba(0, 0, 40, 0.6)), url('${image}');`;
+
   return (
     <div
       class="w-full flex px-8 h-96 justify-center items-center flex-col gap-8 bg-cover bg-center bg-no-repeat bg-gray-100 rounded-xl text-white"

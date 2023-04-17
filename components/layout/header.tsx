@@ -7,7 +7,7 @@ export default function Header(props: { pathname: string }) {
   };
 
   return (
-    <header class="max-w-screen-md px-4 pt-16 mx-auto">
+    <header class="max-w-screen-md px-4 pt-4 mx-auto">
       <a href="/" class="text-3xl font-bold">
         Julian Inwood
       </a>
